@@ -1,20 +1,19 @@
-import {Suspense} from 'react';
+import {FC, ReactElement} from 'react';
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import RandomColorAsync from "./pages/RandomColor/RandomColorAsync.ts";
-import Loader from "./components/Loader/Loader.tsx";
 
-const router = createBrowserRouter([
-	{
-		path: '/randomColor',
-		element: (
-			<Suspense fallback={<Loader/>}>
-				<RandomColorAsync/>
-			</Suspense>
-		),
-	},
-]);
 
-const Router = () => {
+export interface IRouting {
+	path: string;
+	element: ReactElement | ReactElement[];
+	name: string;
+}
+
+interface IRouterProps {
+	routing: IRouting[];
+}
+
+const Router: FC<IRouterProps> = ({routing}) => {
+	const router = createBrowserRouter(routing.map(routerElement => ({path: routerElement.path, element: routerElement.element})));
 	return <RouterProvider router={router} />
 };
 

@@ -1,8 +1,13 @@
+import {Stack} from "@mui/material";
+import Input from '@mui/material/Input';
+
 const RandomColor = () => {
 	return (
-		<div>
-			123
-		</div>
+		<Stack>
+			<Input
+				placeholder="123"
+			/>
+		</Stack>
 	);
 };
 
