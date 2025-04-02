@@ -1,5 +1,11 @@
-name: GitHub Actions Demo
+name: Test and Deploy
 on: [push]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
   test:
     runs-on: ubuntu-latest
