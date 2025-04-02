@@ -1,5 +1,5 @@
 import {FC, ReactElement} from 'react';
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import {createHashRouter, RouterProvider} from "react-router-dom";
 
 
 export interface IRouting {
@@ -13,7 +13,7 @@ interface IRouterProps {
 }
 
 const Router: FC<IRouterProps> = ({routing}) => {
-	const router = createBrowserRouter(routing.map(routerElement => ({path: routerElement.path, element: routerElement.element})));
+	const router = createHashRouter(routing.map(routerElement => ({path: routerElement.path, element: routerElement.element})));
 	return <RouterProvider router={router} />
 };
 
