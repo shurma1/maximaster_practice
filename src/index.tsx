@@ -1,4 +1,4 @@
-import {ReactElement, StrictMode, Suspense} from 'react'
+import {StrictMode, Suspense} from 'react'
 import { createRoot } from 'react-dom/client'
 import './styles/index.scss'
 import Router, {IRouting} from "./Router.tsx";
